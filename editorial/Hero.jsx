@@ -5,7 +5,7 @@ const H_EMAIL = "vinoothnanadikatla@gmail.com";
 const H_GITHUB = "https://github.com/Vinoo-nadikatla";
 const H_RESUME = "Vinoothna-Nadikatla-Resume.pdf";
 
-const HERO_ROLES = ["AI ENGINEER", "MACHINE LEARNING", "DATA SCIENTIST", "GENERATIVE AI"];
+const HERO_ROLES = ["AI ENGINEER", "MACHINE LEARNING ENGINEERING", "DATA SCIENTIST", "GENERATIVE AI"];
 
 function HeroRole() {
   const [i, setI] = useStateHero(0);
