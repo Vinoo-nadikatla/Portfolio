@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinoothna Nadikatla — AI Engineer</title>
+
+  <!-- Standalone-bundle resource dependencies (images + résumé referenced as strings in JSX) -->
+  <meta name="ext-resource-dependency" content="assets/shap-importance.png" data-resource-id="assets/shap-importance.png" />
+  <meta name="ext-resource-dependency" content="assets/shap-summary.png" data-resource-id="assets/shap-summary.png" />
+  <meta name="ext-resource-dependency" content="assets/paper-firstpage.png" data-resource-id="assets/paper-firstpage.png" />
+  <meta name="ext-resource-dependency" content="assets/cert-pcems-conference.png" data-resource-id="assets/cert-pcems-conference.png" />
+  <meta name="ext-resource-dependency" content="assets/cert-prompt-coursera.png" data-resource-id="assets/cert-prompt-coursera.png" />
+  <meta name="ext-resource-dependency" content="assets/cert-genai-guvi.png" data-resource-id="assets/cert-genai-guvi.png" />
+  <meta name="ext-resource-dependency" content="assets/cert-genai-infosys.png" data-resource-id="assets/cert-genai-infosys.png" />
+  <meta name="ext-resource-dependency" content="assets/cert-robotics-verzeo.jpg" data-resource-id="assets/cert-robotics-verzeo.jpg" />
+  <meta name="ext-resource-dependency" content="Vinoothna-Nadikatla-Resume.pdf" data-resource-id="Vinoothna-Nadikatla-Resume.pdf" />
+  <!-- Tool/skill logos (hover chips) — referenced as strings in editorial/Skills.jsx -->
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/python" data-resource-id="https://cdn.simpleicons.org/python" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/openjdk" data-resource-id="https://cdn.simpleicons.org/openjdk" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/mysql" data-resource-id="https://cdn.simpleicons.org/mysql" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/scikitlearn" data-resource-id="https://cdn.simpleicons.org/scikitlearn" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/tensorflow" data-resource-id="https://cdn.simpleicons.org/tensorflow" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/apachespark" data-resource-id="https://cdn.simpleicons.org/apachespark" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/mlflow" data-resource-id="https://cdn.simpleicons.org/mlflow" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/streamlit" data-resource-id="https://cdn.simpleicons.org/streamlit" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/github" data-resource-id="https://cdn.simpleicons.org/github" />
+  <meta name="ext-resource-dependency" content="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" data-resource-id="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/docker" data-resource-id="https://cdn.simpleicons.org/docker" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/dvc" data-resource-id="https://cdn.simpleicons.org/dvc" />
+  <meta name="ext-resource-dependency" content="https://cdn.simpleicons.org/kubernetes" data-resource-id="https://cdn.simpleicons.org/kubernetes" />
+  <script>
+    // Resolves a project-relative asset path to its inlined blob URL in the
+    // standalone bundle; falls back to the raw path in the un-bundled original.
+    window.RSRC = function (p) { return (window.__resources && window.__resources[p]) || p; };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Oswald:wght@500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/framer-motion@11.11.17/dist/framer-motion.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.waves.min.js"></script>
+  <script>
+    window.Motion = window.FramerMotion || window.Motion;
+    const _err = console.error;
+    console.error = (...args) => {
+      const msg = typeof args[0] === "string" ? args[0] : "";
+      if (msg.includes("unique \"key\" prop") || msg.includes("keyframes")) return;
+      _err(...args);
+    };
+  </script>
+
+  <style>
+    /* ====================================================================
+       EDITORIAL DESIGN SYSTEM — inverted (cream on black)
+       Inspired by oversized monochrome magazine portfolios.
+       ==================================================================== */
+    :root {
+      --font-display: "Anton", sans-serif;
+      --font-serif: "Newsreader", serif;
+      --font-body: "Archivo", sans-serif;
+
+      /* palette — overridden by [data-palette] below */
+      --bg: #0c0c0d;
+      --ink: #ece6da;          /* warm cream — primary */
+      --ink-strong: #fbf9f4;   /* near-white highlight */
+      --muted: rgba(236, 230, 218, 0.55);
+      --faint: rgba(236, 230, 218, 0.34);
+      --rule: rgba(236, 230, 218, 0.16);
+      --rule-soft: rgba(236, 230, 218, 0.09);
+      --cell: rgba(236, 230, 218, 0.025);
+      --invert-bg: #ece6da;    /* hover/active fill */
+      --invert-ink: #0c0c0d;
+
+      --wave-color: 0x171a1f;
+      --wave-opacity: 0.42;
+      --wave-blend: screen;
+      --grade: radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.05), rgba(0,0,0,0) 55%),
+               radial-gradient(130% 100% at 50% 120%, rgba(0,0,0,0.6), rgba(0,0,0,0) 60%);
+    }
+
+    [data-palette="paper"] {
+      --bg: #efeadf;
+      --ink: #1a1710;
+      --ink-strong: #0a0805;
+      --muted: rgba(26, 23, 16, 0.72);
+      --faint: rgba(26, 23, 16, 0.48);
+      --rule: rgba(26, 23, 16, 0.24);
+      --rule-soft: rgba(26, 23, 16, 0.12);
+      --cell: rgba(26, 23, 16, 0.035);
+      --invert-bg: #1a1710;
+      --invert-ink: #efeadf;
+      --wave-color: 0xdcd2bf;
+      --wave-opacity: 0.5;
+      --wave-blend: multiply;
+      --grade: radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.4), rgba(255,255,255,0) 55%),
+               radial-gradient(130% 100% at 50% 120%, rgba(40,30,12,0.16), rgba(0,0,0,0) 62%),
+               radial-gradient(100% 100% at 50% 50%, rgba(0,0,0,0) 60%, rgba(30,22,8,0.12) 100%);
+    }
+
+    [data-palette="graphite"] {
+      --bg: #15181c;
+      --ink: #dde0e4;
+      --ink-strong: #ffffff;
+      --muted: rgba(221, 224, 228, 0.55);
+      --faint: rgba(221, 224, 228, 0.34);
+      --rule: rgba(221, 224, 228, 0.15);
+      --rule-soft: rgba(221, 224, 228, 0.08);
+      --cell: rgba(221, 224, 228, 0.03);
+      --invert-bg: #dde0e4;
+      --invert-ink: #15181c;
+      --wave-color: 0x2a3038;
+      --wave-opacity: 0.5;
+      --wave-blend: screen;
+      --grade: radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.06), rgba(0,0,0,0) 55%),
+               radial-gradient(130% 100% at 50% 120%, rgba(0,0,0,0.5), rgba(0,0,0,0) 60%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: clip;
+    }
+
+    ::selection { background: var(--ink); color: var(--bg); }
+
+    /* ---- type primitives ---- */
+    .ed-display {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      color: var(--ink-strong);
+      line-height: 0.82;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+      margin: 0;
+    }
+    /* Anton is already heavy/condensed; Oswald/Archivo Black need help */
+    [data-display="oswald"] { --font-display: "Oswald", sans-serif; }
+    [data-display="oswald"] .ed-display { font-weight: 700; letter-spacing: -0.02em; }
+    [data-display="archivo-black"] { --font-display: "Archivo Black", sans-serif; }
+    [data-display="archivo-black"] .ed-display { line-height: 0.9; letter-spacing: -0.03em; }
+
+    .ed-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+    .ed-label {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .ed-num {
+      font-family: var(--font-display);
+      color: var(--ink-strong);
+      line-height: 0.8;
+      font-weight: 400;
+    }
+    .ed-rule { border-top: 1px solid var(--rule); }
+    .ed-rule-b { border-bottom: 1px solid var(--rule); }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ---- layout shells ---- */
+    .ed-section { position: relative; padding: 7rem 2.5rem; }
+    @media (max-width: 900px) { .ed-section { padding: 4.5rem 1.25rem; } }
+
+    /* the fixed vertical nameplate rail */
+    .ed-rail {
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      width: 4rem;
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      border-right: 1px solid var(--rule-soft);
+      background: transparent;
+      pointer-events: none;
+      mix-blend-mode: difference;
+    }
+    .ed-rail .ed-rail-name {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      letter-spacing: 0.34em;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .ed-rail .ed-rail-mark { font-family: var(--font-display); color: #fff; font-size: 20px; line-height: 1; }
+    .ed-rail .ed-rail-year { writing-mode: vertical-rl; font-size: 10px; letter-spacing: 0.3em; color: #fff; font-family: var(--font-body); }
+    @media (max-width: 900px) { .ed-rail { display: none; } }
+
+    /* ---- editorial cell (flat, hairline, invert on hover) ---- */
+    .ed-cell {
+      position: relative;
+      background: var(--cell);
+      border: 1px solid var(--rule);
+      transition: background 0.4s cubic-bezier(0.16,1,0.3,1), color 0.4s ease, transform 0.4s cubic-bezier(0.16,1,0.3,1);
+      will-change: transform;
+    }
+    a.ed-cell:hover, button.ed-cell:hover {
+      background: var(--invert-bg);
+      color: var(--invert-ink);
+    }
+    .ed-cell .ed-display, .ed-cell .ed-num { transition: color 0.4s ease; }
+    a.ed-cell:hover .ed-display, button.ed-cell:hover .ed-display,
+    a.ed-cell:hover .ed-num, button.ed-cell:hover .ed-num { color: var(--invert-ink); }
+    a.ed-cell:hover .ed-muted, button.ed-cell:hover .ed-muted { color: var(--invert-ink); opacity: 0.7; }
+    a.ed-cell:hover .ed-label, button.ed-cell:hover .ed-label { color: var(--invert-ink); opacity: 0.65; }
+    a.ed-cell:hover .ed-chip, button.ed-cell:hover .ed-chip { border-color: rgba(0,0,0,0.25); color: var(--invert-ink); }
+    a.ed-cell:hover .ed-arrow, button.ed-cell:hover .ed-arrow { opacity: 1; transform: translate(0,0); }
+
+    .ed-muted { color: var(--muted); }
+    .ed-faint { color: var(--faint); }
+    .ed-strong { color: var(--ink-strong); }
+
+    .ed-chip {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border: 1px solid var(--rule);
+      padding: 0.3rem 0.7rem;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: border-color 0.4s ease, color 0.4s ease;
+    }
+
+    .ed-arrow { opacity: 0; transform: translate(-4px, 4px); transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+
+    /* underline link */
+    .ed-link { position: relative; }
+    .ed-link::after { content:""; position:absolute; left:0; bottom:-2px; height:1px; width:100%; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .ed-link:hover::after { transform: scaleX(1); }
+
+    /* solid button */
+    .ed-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--invert-bg); color: var(--invert-ink);
+      font-family: var(--font-body); font-weight: 600; font-size: 13px;
+      letter-spacing: 0.02em; text-transform: uppercase;
+      padding: 0.85rem 1.4rem; border: 1px solid var(--invert-bg);
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+    .ed-btn:hover { background: transparent; color: var(--ink-strong); border-color: var(--ink-strong); }
+    .ed-btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--ink-strong);
+      font-family: var(--font-body); font-weight: 600; font-size: 13px;
+      letter-spacing: 0.02em; text-transform: uppercase;
+      padding: 0.85rem 1.4rem; border: 1px solid var(--rule);
+      transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease;
+    }
+    .ed-btn-ghost:hover { border-color: var(--ink-strong); }
+
+    /* background wave field */
+    #ed-bg { position: fixed; inset: 0; z-index: 0; }
+    #ed-bg .ed-wave { position: absolute; inset: 0; opacity: var(--wave-opacity); mix-blend-mode: var(--wave-blend); transition: opacity 0.5s ease; }
+    #ed-bg .ed-grade { position: absolute; inset: 0; background: var(--grade); pointer-events: none; }
+    #ed-content { position: relative; z-index: 1; }
+
+    /* image slot theming — the component's empty-state frame/ring/caption are
+       near-black (built for light pages); give the host a pale "photo frame"
+       fill so the empty placeholder is visible on our dark canvas. A dropped
+       photo fills edge-to-edge; the hairline border reads as an editorial frame. */
+    image-slot { background: #ded8ca; border: 1px solid var(--rule); }
+
+    /* ---- scroll reveals (IntersectionObserver-driven) ---- */
+    .ed-rise-inner { transform: translateY(108%); transition: transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .ed-rise-inner.is-in { transform: translateY(0); }
+
+    .ed-fade { opacity: 0; transform: translateY(var(--ed-y, 26px)); filter: blur(8px);
+      transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1), filter 0.75s ease; }
+    .ed-fade.is-in { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .ed-rise-inner { transform: none !important; }
+      .ed-fade { opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+
+    /* nav */
+    .ed-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 45;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      mix-blend-mode: difference;
+    }
+    @media (max-width: 900px) { .ed-nav { padding: 1rem 1.25rem; } }
+    .ed-nav a { color: #fff; }
+    .ed-nav-links { display: flex; gap: 1.6rem; }
+    @media (max-width: 760px) { .ed-nav-links { display: none; } }
+    .ed-nav-links a { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; opacity: 0.85; transition: opacity 0.3s; }
+    .ed-nav-links a:hover { opacity: 1; }
+
+    /* ---- paper theme refinements: legibility + brighter, more open type ---- */
+    [data-palette="paper"] .ed-nav { mix-blend-mode: normal; }
+    [data-palette="paper"] .ed-nav a { color: var(--ink-strong); }
+    [data-palette="paper"] .ed-nav-links a { opacity: 0.88; }
+    [data-palette="paper"] .ed-nav-links a:hover { opacity: 1; }
+    /* open up the leading so stacked headings don't crowd in this theme */
+    [data-palette="paper"] .ed-display { line-height: 0.96; }
+    /* keep the giant hero name from overlapping line-to-line */
+    [data-palette="paper"] .hero-name .ed-display { line-height: 1.0; }
+  </style>
+</head>
+<body style="font-size: 14px" data-display="oswald">
+  <div id="root"></div>
+
+  <template id="__bundler_thumbnail" data-bg-color="#efeadf">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#efeadf" />
+      <text x="600" y="330" text-anchor="middle" font-family="Anton, sans-serif" font-size="240" fill="#0a0805">VN</text>
+      <text x="600" y="470" text-anchor="middle" font-family="Archivo, sans-serif" font-size="44" letter-spacing="18" fill="#0a0805">AI ENGINEER</text>
+    </svg>
+  </template>
+
+  <script src="editorial/image-slot.js"></script>
+  <script type="text/babel" src="editorial/Icons.jsx"></script>
+  <script type="text/babel" src="editorial/tweaks-panel.jsx"></script>
+  <script type="text/babel" src="editorial/VantaWaves.jsx"></script>
+  <script type="text/babel" src="editorial/Frame.jsx"></script>
+  <script type="text/babel" src="editorial/Reveal.jsx"></script>
+  <script type="text/babel" src="editorial/Hero.jsx"></script>
+  <script type="text/babel" src="editorial/About.jsx"></script>
+  <script type="text/babel" src="editorial/Work.jsx"></script>
+  <script type="text/babel" src="editorial/Skills.jsx"></script>
+  <script type="text/babel" src="editorial/Research.jsx"></script>
+  <script type="text/babel" src="editorial/Education.jsx"></script>
+  <script type="text/babel" src="editorial/Certifications.jsx"></script>
+  <script type="text/babel" src="editorial/Contact.jsx"></script>
+  <script type="text/babel" src="editorial/App.jsx"></script>
+</body>
+</html>
